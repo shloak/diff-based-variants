@@ -1,0 +1,7 @@
+{
+  "name": "Diff based variants",
+  "id": "915432870232330800",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html"
+}

@@ -1,0 +1,26 @@
+<h2>Diff based variants</h2>
+<p>Property name: <input id="name" value="">
+<button id="add">Add property</button> </p> <br>
+<button id="generate">Generate state group</button>
+<div id="status"></div>
+<script>
+
+document.getElementById('add').onclick = () => {
+  const name = document.getElementById('name').value;
+  if (!name) {
+    document.getElementById('status').innerHTML = "Please give this property a name"
+  }
+  parent.postMessage({ pluginMessage: { type: 'add-property', name } }, '*')
+}
+
+document.getElementById('generate').onclick = () => {
+  document.getElementById('status').innerHTML = "Clicked generate"
+  parent.postMessage({ pluginMessage: { type: 'generate-group' } }, '*')
+}
+
+onmessage = (event) => {
+  console.log("hello " + event.data.pluginMessage)
+  document.getElementById('status').innerHTML = event.data.pluginMessage
+}
+
+</script>
