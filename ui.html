@@ -1,8 +1,8 @@
-<h2>Diff based variants</h2>
-<p>Property name: <input id="name" value="">
-<button id="add">Add property</button> </p> <br>
-<button id="generate">Generate state group</button>
-<div id="status"></div>
+<h3 style="font-family:verdana">Diff based variants</h3>
+<p style="font-family:verdana">Property name: <input id="name" value="">
+<button id="add" style="font-family:verdana">Add property</button> </p>
+<button id="generate" style="font-family:verdana">Generate state group</button>
+<p><div id="status" style="font-family:verdana"></div></p>
 <script>
 
 document.getElementById('add').onclick = () => {
@@ -11,6 +11,7 @@ document.getElementById('add').onclick = () => {
     document.getElementById('status').innerHTML = "Please give this property a name"
   }
   parent.postMessage({ pluginMessage: { type: 'add-property', name } }, '*')
+  document.getElementById('status').innerHTML = "Added property " + name
 }
 
 document.getElementById('generate').onclick = () => {
